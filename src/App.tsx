@@ -1,14 +1,8 @@
-import './App.css'
-import Spline from '@splinetool/react-spline';
-
+import './index.css'
+import Portfolio from '@/components/portfolio'
 
 function App() {
-
-  return (
-    <div>
-      <Spline scene="https://prod.spline.design/3HMIIWWL-Jmpc1gm/scene.splinecode" />
-    </div>
-  )
+  return <Portfolio />
 }
 
 export default App
