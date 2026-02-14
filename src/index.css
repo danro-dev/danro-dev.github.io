@@ -186,3 +186,237 @@
     pointer-events: none;
   }
 }
+
+@keyframes love-heart-float {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(-120vh) scale(1.25);
+    opacity: 0;
+  }
+}
+
+.love-heart-float {
+  animation-name: love-heart-float;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Click Heart Animation */
+.click-heart {
+  animation: clickHeartFloat 1s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes clickHeartFloat {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -80px) scale(1.2) rotate(10deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -120px) scale(0.5) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+/* Love Letter Styles */
+.love-letter-container {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 600px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.love-letter {
+  position: relative;
+  background: linear-gradient(135deg, #fff9f9 0%, #fff 100%);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 
+    0 10px 40px rgba(244, 63, 94, 0.15),
+    0 0 0 1px rgba(244, 63, 94, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.love-letter:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 50px rgba(244, 63, 94, 0.2),
+    0 0 0 1px rgba(244, 63, 94, 0.15);
+}
+
+.love-letter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, #f43f5e, #ec4899, #f43f5e);
+  border-radius: 20px 20px 0 0;
+}
+
+.letter-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px dashed rgba(244, 63, 94, 0.2);
+}
+
+.letter-content {
+  text-align: left;
+  line-height: 1.8;
+  color: #334155;
+  font-size: 1.05rem;
+}
+
+.letter-content p {
+  text-indent: 2rem;
+}
+
+.signature {
+  text-align: right;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(244, 63, 94, 0.1);
+}
+
+.letter-decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.heart-deco {
+  position: absolute;
+  opacity: 0.3;
+  animation: floatHeart 4s ease-in-out infinite;
+}
+
+.heart-deco-1 {
+  top: 10%;
+  right: 5%;
+  animation-delay: 0s;
+}
+
+.heart-deco-2 {
+  bottom: 15%;
+  left: 8%;
+  animation-delay: 1s;
+}
+
+.heart-deco-3 {
+  top: 60%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .love-letter {
+    padding: 2rem 1.5rem;
+  }
+  
+  .letter-content {
+    font-size: 0.95rem;
+  }
+  
+  .letter-content p {
+    text-indent: 1rem;
+  }
+}
+
+/* Verses Section */
+.verses-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.verse-card {
+  background: linear-gradient(135deg, #fff9f9 0%, #fff 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 
+    0 8px 30px rgba(244, 63, 94, 0.12),
+    0 0 0 1px rgba(244, 63, 94, 0.08);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.verse-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(244, 63, 94, 0.18),
+    0 0 0 1px rgba(244, 63, 94, 0.12);
+}
+
+.verse-card::before {
+  content: '"';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 4rem;
+  color: rgba(244, 63, 94, 0.1);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+/* Video Section */
+.video-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 
+    0 10px 40px rgba(244, 63, 94, 0.15),
+    0 0 0 1px rgba(244, 63, 94, 0.1);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
